@@ -1,3 +1,6 @@
+## Đây là source code của ứng dụng TODO APP bằng React + Redux
+Video tutorial: https://youtu.be/g_K1w8e0lLo
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
