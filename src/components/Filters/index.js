@@ -25,7 +25,7 @@ export default function Filters() {
 
   const handlePriorityChange = (value) => {
     setFilterPriorities(value);
-    dispatch(filtersSlice.actions.priorityFilterChange(value));
+    dispatch(filtersSlice.actions.prioritiesFilterChange(value));
   }
 
   return (

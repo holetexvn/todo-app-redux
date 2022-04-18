@@ -52,3 +52,31 @@ export default createSlice({
     },
   },
 });
+/**
+ * => (payload) => {
+ *  return {
+ *    type: 'filters/searchFilterChange',
+ *    payload: payload
+ *  }
+ * }
+ * 
+ * 
+ * 
+ * => {
+ *  reducer,
+ *  actions
+ * }
+ * action => object
+ * 
+ * {
+ *  type: 'abc',
+ *  payload: value
+ * }
+ * 
+ * action creator => function :  () => {
+ *  return {
+ *    type: 'abc',
+ *    payload: value
+ * }
+ * }
+*/
