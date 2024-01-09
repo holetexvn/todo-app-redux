@@ -1,7 +1,24 @@
-import { Col, Row, Input, Button, Select, Tag } from 'antd';
+import { Button, Col, Input, Row, Select, Tag } from 'antd';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 } from 'uuid';
+import { addTodo } from '../../redux/action';
 import Todo from '../Todo';
 
 export default function TodoList() {
+  const dispatch = useDispatch()
+  const [input, setInput] = useState('')
+  const [priority, setPriority] = useState('Medium')
+
+  const handleAddTodo = () => {
+    dispatch(addTodo({
+      id: v4(),
+      name: input,
+      prioriry: priority,
+      completed: false
+    }))
+  }
+
   return (
     <Row style={{ height: 'calc(100% - 40px)' }}>
       <Col span={24} style={{ height: 'calc(100% - 40px)', overflowY: 'auto' }}>
@@ -11,8 +28,8 @@ export default function TodoList() {
       </Col>
       <Col span={24}>
         <Input.Group style={{ display: 'flex' }} compact>
-          <Input />
-          <Select defaultValue="Medium">
+          <Input onChange={(e) => setInput(e.target.value)} />
+          <Select defaultValue="Medium" value={priority} onChange={(value) => {setPriority(value)}}>
             <Select.Option value='High' label='High'>
               <Tag color='red'>High</Tag>
             </Select.Option>
@@ -23,7 +40,7 @@ export default function TodoList() {
               <Tag color='gray'>Low</Tag>
             </Select.Option>
           </Select>
-          <Button type='primary'>
+          <Button type='primary' onClick={handleAddTodo}>
             Add
           </Button>
         </Input.Group>

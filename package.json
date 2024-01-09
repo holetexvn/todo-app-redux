@@ -9,7 +9,11 @@
     "antd": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^9.0.4",
     "react-scripts": "4.0.3",
+    "redux": "^5.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "uuid": "^9.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
