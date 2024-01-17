@@ -1,8 +1,13 @@
-const addTodo = (todo) => {
+export const addTodo = (todo) => {
   return {
     type: 'todoList/addTodo',
     payload: todo
   }
 }
 
-export { addTodo }
+export const searchFilterChange = (text) => {
+  return {
+    type: 'filters/searchFilterChange',
+    payload: text
+  }
+}

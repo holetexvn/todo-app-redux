@@ -1,5 +1,5 @@
 const initValue = {
-  filter: {
+  filters: {
     search: '',
     status: 'All',
     priority: []
@@ -29,10 +29,18 @@ const initValue = {
 const rootReducer = (state = initValue, action) => {
   switch (action.type) {
     case 'todoList/addTodo':
-      console.log(action.payload)
+      console.log({ state, action })
       return {
         ...state,
         todoList: [...state.todoList, action.payload]
+      }
+    case 'filters/searchFilterChange':
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          search: action.payload
+        }
       }
     default:
       return state
