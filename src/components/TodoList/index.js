@@ -17,7 +17,7 @@ export default function TodoList() {
     dispatch(addTodo({
       id: v4(),
       name: input,
-      prioriry: priority,
+      priority: priority,
       completed: false
     }))
 
@@ -28,10 +28,10 @@ export default function TodoList() {
   return (
     <Row style={{ height: 'calc(100% - 40px)' }}>
       <Col span={24} style={{ height: 'calc(100% - 40px)', overflowY: 'auto' }}>
-        {/* <Todo name='Learn React' prioriry='High' />
-        <Todo name='Learn Redux' prioriry='Medium' />
-        <Todo name='Learn JavaScript' prioriry='Low' /> */}
-        {todoList.map(todo => <Todo key={todo.id} name={todo.name} prioriry={todo.prioriry} />)}
+        {/* <Todo name='Learn React' priority='High' />
+        <Todo name='Learn Redux' priority='Medium' />
+        <Todo name='Learn JavaScript' priority='Low' /> */}
+        {todoList.map(todo => <Todo key={todo.id} name={todo.name} priority={todo.priority} />)}
       </Col>
       <Col span={24}>
         <Input.Group style={{ display: 'flex' }} compact>
